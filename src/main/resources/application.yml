@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      org:
+        hibernate:
+          envers:
+            audit_table_suffix: _log
+            revision_field_name: revision_id
+            revision_type_field_name: revision_type
+      hibernate:
+        format_sql: true
+    show-sql: false
+    open-in-view: false
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/test?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: test
+    password: test

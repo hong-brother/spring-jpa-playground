@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  DB:
+    image: mariadb:lts
+    ports:
+      - 3306:3306
+    volumes:
+      - "~/.db/mariadb/conf.d:/etc/mysql/conf.d"
+      - "~/.db/mariadb/data:/var/lib/mysql"
+    environment:
+      MARIADB_DATABASE: test
+      MARIADB_USER: test
+      MARIADB_PASSWORD: test
+      MARIADB_ROOT_PASSWORD: test
