@@ -2,9 +2,11 @@ package io.purple.springjpa.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,15 +20,16 @@ import java.util.Map;
 public class Team extends BaseEntity {
 
     @Id
-    @SequenceGenerator(
-            name = "team_seq_generator",
-            sequenceName = "team_seq"
-    )
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     @Column(name = "team_id", nullable = false)
     private Long teamId;
     @Column(name = "team_name", nullable = true, length = 100)
     private String teamName;
-    @OneToMany(mappedBy = "team")
-    private List<Member> members = new ArrayList<>();
+
+    @Builder
+    public Team(String teamName) {
+        this.teamName = teamName;
+        this.createDtm = LocalDateTime.now();
+        this.updateDtm = LocalDateTime.now();
+    }
 }

@@ -13,11 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member extends BaseEntity {
     @Id
-    @SequenceGenerator(
-            name = "member_seq_generator",
-            sequenceName = "member_seq"
-    )
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     @Column(name = "member_id", nullable = false)
     private Long memberId;
     @Column(name = "etc", nullable = true, length = 1000)
