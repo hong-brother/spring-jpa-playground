@@ -1,14 +1,13 @@
 package io.purple.springjpa.domain.value;
 
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+
+@Entity()
+@Table(name = "value_member")
 @Getter
 @NoArgsConstructor
 public class ValueMember {

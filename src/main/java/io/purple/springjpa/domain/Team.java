@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 @Getter
-@Entity
+@Entity()
 @Table(
-        name = "team"
+        name = "default_team"
 )
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Team extends BaseEntity {

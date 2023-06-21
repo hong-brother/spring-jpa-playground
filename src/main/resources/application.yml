@@ -2,7 +2,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MariaDBDialect
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     properties:
       org:
         hibernate:
@@ -12,7 +12,7 @@ spring:
             revision_type_field_name: revision_type
       hibernate:
         format_sql: true
-    show-sql: false
+    show-sql: true
     open-in-view: false
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
